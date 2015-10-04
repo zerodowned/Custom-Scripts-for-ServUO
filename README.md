@@ -9,9 +9,10 @@ Various scripts for use with RunUo/ServUo/PlayUo
 [Crystal Portals](https://github.com/zerodowned/My-Stuff/tree/master/CrystalPortals "")<br> 
   Already included in the repos for Serv and Justuo ( I believe ) with edits to improve functionality
   
-[Item Of Light](https://github.com/zerodowned/My-Stuff/tree/master/ItemOfLight "")A light source that's truely equipable and moves with you naturally.
+[Item Of Light](https://github.com/zerodowned/My-Stuff/tree/master/ItemOfLight "")<br>
+A light source that's truely equipable and moves with you naturally.
   
-*LivingStatue*<br> 
+[Living Statue](https://github.com/zerodowned/My-Stuff/tree/master/LivingStatue "")<br>
   I edited the BaseDesItem script by Vorspire so the mobile attached to the item can move (but cannot be seen) and making it appear as though the item is walking.
   The Mobile corpse almost instantly self-deletes OnDeath and can drop loot on the ground.
   One downfall to this is that the static item won't turn to face the direct it's moving, so the fake animation can seem...pretty sloppy.

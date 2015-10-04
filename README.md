@@ -6,13 +6,13 @@ Various scripts for use with RunUo/ServUo/PlayUo
   It's a stone that can be used to summon almost any Vendor from it. 
   Once the summoner walks away, the vendor self deletes.
   
-*Crystal Portals
+*Crystal Portals*<br> 
   Already included in the repos for Serv and Justuo ( I believe ) with edits to improve functionality
   
-*Item Of Light
+*Item Of Light*<br> 
   A light source that's truely equipable and moves with you naturally.
   
-*LivingStatue
+*LivingStatue*<br> 
   I edited the BaseDesItem script by Vorspire so the mobile attached to the item can move (but cannot be seen) and making it appear as though the item is walking.
   The Mobile corpse almost instantly self-deletes OnDeath and can drop loot on the ground.
   One downfall to this is that the static item won't turn to face the direct it's moving, so the fake animation can seem...pretty sloppy.
@@ -31,31 +31,31 @@ public virtual void AddBlood(Mobile attacker, Mobile defender, int damage)
        }
 
 
-*MobileStatues 
+*MobileStatues*<br> 
   An idea presented to my by Talow...
   This is kind of a twist to the LivingStatue code, the Mobile IS the statue, with "frozen" animation.
   It stands on a pedastal until you get too close to it, then it comes alive and starts to attack you until you kill it.
   Once animated, if there are no players within a certain range, it will go back to it's pedastal and "freeze" again.
   
-*Monster In A Box - UNDER Development
+*Monster In A Box - UNDER Development*<br> 
   * * Currently under development * *
   This code, when completed, is intended to allow you to script custom mobiles in game ( within limitations )
   Allowing you to create custom Mobs for events without writing a full script and restarting.
   * Eventually intended to have a system to save and spawn mobiles via XML as well.
   * Also intended to eventually expand on to create items, weapons, armor, etc.
   
-*Pause
+*Pause*<br> 
   This allows players to "Pause" making them frozen, hidden, and invulnerable. 
   It also puts them in Peace Mode and auto stables pets to prevent afk hunting.
   Cannot be used near Champion areas, or while involved in a PVP match.
   * System has an option to allow Staff to change the settings of certain to stop them from using it if they are abusing it via the [getxmlatt and target the player and select the Pause attachment and then change the propert "CanPause"
   - Intended to allow players to go afk randomly when Real Life calls. 
 
-*Shame Revamp - needs tweaking plus mobile abilities
+*Shame Revamp - needs tweaking plus mobile abilities*<br> 
   Various mobiles and items to be used for the Shame Dungeon revamp. 
   Probably needs some tweaking.
   
-*Spellbar - needs edits to distro scripts
+*Spellbar - needs edits to distro scripts*<br> 
   A gump based hotbar to add spells and allows players to cast them via the hotbar with a single click.
   Player's must have the corresponding book with spell in their pack to cast them.
   - The hotbar can be locked to prevent movement/closing.
@@ -63,26 +63,26 @@ public virtual void AddBlood(Mobile attacker, Mobile defender, int damage)
   - Can be flipped horizontally or vertically
   - Additional edits are needed to fully work with Ninjitsu/Bushido spells ( will post later )
   
-*Carousel - incomplete but functional 
+*Carousel - incomplete but functional*<br> 
   Exactly what it sounds like. Needs some editing to add tiles around it OnCreate. *ToDoList
 
-*Elevator
+*Elevator*<br> 
   Platform that raises and lowers on a timer. Players and step on it and it will carry them up with it.
   
-*FreezeTile - incomplete
+*FreezeTile - incomplete*<br> 
   Intended to be used with XML Waypoints ( with edits ) to make mobiles pause at a certain spot before carrying on down the waypoint path.
   
-*Guardian Knight - needs works
+*Guardian Knight - needs works*<br> 
   A Knight that certain parts of armor "fall Off" depending on how much damage has been taken.
   
-*Moving Trap 
+*Moving Trap*<br> 
   A block that moves back and forth and will damage you if you're in it's path ( like those spiked blocks from Zelda )
 
-*SBSellAll
+*SBSellAll*<br> 
   Intended to be used to allow Players to sell anything to any NPC Vendor
   Takes some of the tediousness out of selling loot.
   
-*Smart Item - probably needs a little work
+*Smart Item - probably needs a little work*<br> 
   Items with OnThink and OnCreate similar to Mobiles.
   Inherit from this to prevent needing to create timers all the time.
   

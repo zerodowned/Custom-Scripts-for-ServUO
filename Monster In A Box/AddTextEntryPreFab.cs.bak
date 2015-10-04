@@ -1,0 +1,56 @@
+using System.Linq;
+
+namespace Server.Gumps
+{
+	public partial class Gump
+	{
+		public void AddTextEntryPreFab(int imageid, int x, int y, int width, int height, int hue, int entryID, string initialText = "")
+		{
+			Add(new GumpTextEntryPreFab(imageid, x, y, width, height, hue, entryID, initialText, null, ""));
+		}
+
+		public void AddTextEntryPreFab(
+			int imageid,
+			int x,
+			int y,
+			int width,
+			int height,
+			int hue,
+			int entryID,
+			GumpResponse callback,
+			string initialText = "",
+			string name = "")
+		{
+			Add(new GumpTextEntryPreFab(imageid, x, y, width, height, hue, entryID, initialText, callback, name));
+		}
+
+		
+		public string GetTextEntryPreFab(int id)
+		{
+			foreach (GumpTextEntry entry in _Entries.OfType<GumpTextEntry>().Where(entry => entry.EntryID == id))
+			{
+				return entry.InitialText;
+			}
+
+			return
+				_Entries.OfType<GumpTextEntryLimited>()
+						.Where(entry => entry.EntryID == id)
+						.Select(entry => entry.InitialText)
+						.FirstOrDefault();
+		}
+
+		public string GetTextEntryPreFab(string name)
+		{
+			foreach (GumpTextEntry entry in _Entries.OfType<GumpTextEntry>().Where(entry => entry.Name == name))
+			{
+				return entry.InitialText;
+			}
+
+			return
+				_Entries.OfType<GumpTextEntryLimited>()
+						.Where(entry => entry.Name == name)
+						.Select(entry => entry.InitialText)
+						.FirstOrDefault();
+		}
+	}
+}

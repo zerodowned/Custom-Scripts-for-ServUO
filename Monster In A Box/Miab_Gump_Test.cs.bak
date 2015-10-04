@@ -1,0 +1,59 @@
+using System;
+using Server;
+using Server.Network;
+using Server.Gumps;
+using Server.Items;
+using Server.Mobiles;
+
+
+namespace Server.Gumps
+{
+	public class Miab_Gump : Gump
+	{
+		//public MonsterInABox_Item mBox_from;
+		
+		public enum MB { Name, Create }
+		
+		private Mobile m_From;
+	
+		public Miab_Gump( Mobile from ) : base( 100, 100 )
+		{
+			//mBox_from = box;
+			m_From = from;
+			
+			Closable=true; Disposable=true; Dragable=true; Resizable=false;
+			
+			AddPage(0);
+			AddBackground(0, 0, 341, 489, 9200);
+			
+			this.AddLabel(17, 83, 0, @"Name");
+			this.AddImageTiled(64, 79, 220, 28, 2524);
+			this.AddTextEntry(70, 83, 200, 20, 0, (int)MB.Name, @"");
+
+			AddButton( 15, 200, 2117, 2117, (int)MB.Create, GumpButtonType.Reply, 0 );
+			
+		}
+		
+		
+		
+		 public override void OnResponse( NetState sender, RelayInfo info )
+        {
+            Mobile from = sender.Mobile;
+            PlayerMobile player = (PlayerMobile)from;
+        
+			if ( info.ButtonID == (int)MB.Create ) {
+				TextRelay nameRelay = info.GetTextEntry( (int)MB.Name );
+				string name = nameRelay.Text.Trim();; 
+				CreateMobile( player, name );
+			}
+		}
+		
+		
+		public void CreateMobile( Mobile from, string name )
+		{
+			Mobile miab = new MonsterInABox_Mobile( name, 1, AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 );
+			miab.MoveToWorld( new Point3D( from.X , from.Y , from.Z ), from.Map );
+		}
+
+	}
+}

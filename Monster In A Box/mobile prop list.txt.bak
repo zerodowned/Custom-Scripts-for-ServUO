@@ -1,0 +1,109 @@
+gump item id = 
+
+8392 - 8487
+8490 - 8503
+9600 - 9693
+9730 - 9781
+10083 - 10099
+10267, 10268
+11650 - 11653
+11655 - 11661
+11664
+11666 - 11676
+17031 - 17065
+19092 - 19095
+19462 - 19464
+
+		private int m_HitsMax = -1;
+		private int m_StamMax = -1;
+		private int m_ManaMax = -1;
+		private int m_DamageMin = -1;
+		private int m_DamageMax = -1;
+		
+		private int m_PhysicalResistance, m_PhysicalDamage = 100;
+		private int m_FireResistance, m_FireDamage;
+		private int m_ColdResistance, m_ColdDamage;
+		private int m_PoisonResistance, m_PoisonDamage;
+		private int m_EnergyResistance, m_EnergyDamage;
+		
+		private bool m_Paragon;
+			
+		public override bool CanRegenHits { get { return !m_IsDeadPet && base.CanRegenHits; } }
+		public override bool CanRegenStam { get { return !IsParagon && !m_IsDeadPet && base.CanRegenStam; } }
+		public override bool CanRegenMana { get { return !m_IsDeadPet && base.CanRegenMana; } }
+
+		public virtual bool HasAura { get { return false; } }
+		public virtual TimeSpan AuraInterval { get { return TimeSpan.FromSeconds(5); } }
+		public virtual int AuraRange { get { return 4; } }
+
+		public virtual int AuraBaseDamage { get { return 5; } }
+		public virtual int AuraPhysicalDamage { get { return 0; } }
+		public virtual int AuraFireDamage { get { return 100; } }
+		public virtual int AuraColdDamage { get { return 0; } }
+		public virtual int AuraPoisonDamage { get { return 0; } }
+		public virtual int AuraEnergyDamage { get { return 0; } }
+		public virtual int AuraChaosDamage { get { return 0; } }
+
+		public virtual bool CanHeal { get { return false; } }
+		
+		#region Area damage
+		public virtual bool CanAreaDamage { get { return false; } }
+		public virtual int AreaDamageRange { get { return 10; } }
+		public virtual double AreaDamageScalar { get { return 1.0; } }
+		public virtual double AreaDamageChance { get { return 0.4; } }
+		public virtual TimeSpan AreaDamageDelay { get { return TimeSpan.FromSeconds(8); } }
+
+		public virtual int AreaPhysicalDamage { get { return 0; } }
+		public virtual int AreaFireDamage { get { return 100; } }
+		public virtual int AreaColdDamage { get { return 0; } }
+		public virtual int AreaPoisonDamage { get { return 0; } }
+		public virtual int AreaEnergyDamage { get { return 0; } }
+		
+		#region Area Poison
+		public virtual bool CanAreaPoison { get { return false; } }
+		
+		public virtual bool CanBreath { get { return HasBreath && !Summoned; } }
+		
+		public virtual bool CanAnimateDead { get { return false; } }
+		
+		public virtual bool AutoDispel { get { return false; } }
+		
+		public virtual bool IsScaryToPets { get { return false; } }
+		public virtual bool IsScaredOfScaryThings { get { return true; } }
+		
+		public virtual bool CanRummageCorpses { get { return false; } }
+	
+/////////////////	
+		#region Corpse Resources
+		public virtual int Feathers { get { return 0; } }
+		public virtual int Wool { get { return 0; } }
+
+		public virtual int Fur { get { return 0; } }
+
+		public virtual MeatType MeatType { get { return MeatType.Ribs; } }
+		public virtual int Meat { get { return 0; } }
+
+		public virtual int Hides { get { return 0; } }
+		public virtual HideType HideType { get { return HideType.Regular; } }
+
+		public virtual int Scales { get { return 0; } }
+		public virtual ScaleType ScaleType { get { return ScaleType.Red; } }
+
+		public virtual int DragonBlood { get { return 0; } }
+////////////////////	
+		[CommandProperty(AccessLevel.GameMaster)]
+		public Spawner MySpawner
+		{
+			get
+			{
+				if (Spawner is Spawner)
+				{
+					return (Spawner as Spawner);
+				}
+
+				return null;
+			}
+			set { }
+		}
+
+		

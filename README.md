@@ -1,7 +1,7 @@
 # My-Stuff
 Various scripts for use with RunUo/ServUo/PlayUo
 
-*AIO Vendor Stone*<br> 
+[AIO Vendor Stone](https://github.com/zerodowned/My-Stuff/tree/master/AIO%20Vendor%20Stone "test")<br>
   Needs a little work. It's one of my older works. 
   It's a stone that can be used to summon almost any Vendor from it. 
   Once the summoner walks away, the vendor self deletes.
@@ -29,7 +29,6 @@ public virtual void AddBlood(Mobile attacker, Mobile defender, int damage)
            return;
          }
        }
-
 
 *MobileStatues*<br> 
   An idea presented to my by Talow...

@@ -1,7 +1,7 @@
 # My-Stuff
 Various scripts for use with RunUo/ServUo/PlayUo
 
-*AIO Vendor Stone 
+*AIO Vendor Stone*<br> 
   Needs a little work. It's one of my older works. 
   It's a stone that can be used to summon almost any Vendor from it. 
   Once the summoner walks away, the vendor self deletes.

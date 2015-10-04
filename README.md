@@ -1,15 +1,15 @@
 # My-Stuff
 Various scripts for use with RunUo/ServUo/PlayUo
 
-[AIO Vendor Stone](https://github.com/zerodowned/My-Stuff/tree/master/AIO%20Vendor%20Stone "test")<br>
+[AIO Vendor Stone](https://github.com/zerodowned/My-Stuff/tree/master/AIO%20Vendor%20Stone "")<br>
   Needs a little work. It's one of my older works. 
   It's a stone that can be used to summon almost any Vendor from it. 
   Once the summoner walks away, the vendor self deletes.
   
-*Crystal Portals*<br> 
+[Crystal Portals](https://github.com/zerodowned/My-Stuff/tree/master/CrystalPortals "")<br> 
   Already included in the repos for Serv and Justuo ( I believe ) with edits to improve functionality
   
-*Item Of Light*<br> 
+[Item Of Light](https://github.com/zerodowned/My-Stuff/tree/master/ItemOfLight "")<br>  
   A light source that's truely equipable and moves with you naturally.
   
 *LivingStatue*<br> 

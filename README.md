@@ -86,12 +86,12 @@ public virtual void AddBlood(Mobile attacker, Mobile defender, int damage)
   Items with OnThink and OnCreate similar to Mobiles.
   Inherit from this to prevent needing to create timers all the time.
   
-*Speaking Sign - a little tweaking to come
+*Speaking Sign - a little tweaking to come*<br>
   Sign that speaks it's name when a player is nearby. 
   - To add use [add Speakingsign "This is the signs name in quotes"
   - Future work intended to prevent the sign from showing up in player's joural as " SpeakingSign says SpeakingSign "
   
-*WayStone_DungeonVersion
+*WayStone_DungeonVersion*<br>
   A spinoff from Talow's WayStone. 
   This is a Stone ( as often used for Stone Vendors, etc ) that sits on the ground instead of being in their pack.
   When doubleclicked, if the player is in a party, it sends a summons request to each member of the party.

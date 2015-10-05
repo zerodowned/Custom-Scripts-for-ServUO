@@ -3,7 +3,7 @@ using System;
 namespace Server.Items
 {
 	public class BaseClothing_ItemOfLight : BaseClothing
-    {
+    	{
 		private Item mLight;
 		bool mIsLit = false;
 		
@@ -22,10 +22,8 @@ namespace Server.Items
 		}
 		
 		[Constructable]
-         public BaseClothing_ItemOfLight(int itemID, Layer layer) : base(0x1F03, Layer.OuterTorso)
-        {
-			//Layer = Layer.OuterTorso;
-		}
+         	public BaseClothing_ItemOfLight(int itemID, Layer layer) : base(0x1F03, Layer.OuterTorso)
+		{}
 	
 		public override void OnDoubleClick(Mobile from) 
 		{
@@ -94,24 +92,24 @@ namespace Server.Items
 		}
 	
         public BaseClothing_ItemOfLight(Serial serial) : base(serial)
-        { }
+        {}
 
         public override void Serialize(GenericWriter writer)
         {
-            base.Serialize(writer);
-            writer.Write((int)0);
+            	base.Serialize(writer);
+            	writer.Write((int)0);
 			
-			writer.Write( ( Item )mLight );
-			writer.Write( ( bool )IsLit );
+		writer.Write( ( Item )mLight );
+		writer.Write( ( bool )IsLit );
         }
 
         public override void Deserialize(GenericReader reader)
         {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
+            	base.Deserialize(reader);
+            	int version = reader.ReadInt();
 			
-			mLight = ( WearableLight )reader.ReadItem( );
-			IsLit = (bool) reader.ReadBool();
+		mLight = ( WearableLight )reader.ReadItem( );
+		IsLit = (bool) reader.ReadBool();
         }
     }
 }

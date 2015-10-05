@@ -30,31 +30,31 @@ public virtual void AddBlood(Mobile attacker, Mobile defender, int damage)
          }
        }
 
-*MobileStatues*<br> 
+[Mobile Statues](https://github.com/zerodowned/My-Stuff/tree/master/Mobile%20Statues "")<br>
   An idea presented to my by Talow...
   This is kind of a twist to the LivingStatue code, the Mobile IS the statue, with "frozen" animation.
   It stands on a pedastal until you get too close to it, then it comes alive and starts to attack you until you kill it.
   Once animated, if there are no players within a certain range, it will go back to it's pedastal and "freeze" again.
   
-*Monster In A Box - UNDER Development*<br> 
+[Monster In A Box](https://github.com/zerodowned/My-Stuff/tree/master/Monster%20In%20A%20Box "")<br>
   * * Currently under development * *
   This code, when completed, is intended to allow you to script custom mobiles in game ( within limitations )
   Allowing you to create custom Mobs for events without writing a full script and restarting.
   * Eventually intended to have a system to save and spawn mobiles via XML as well.
   * Also intended to eventually expand on to create items, weapons, armor, etc.
   
-*Pause*<br> 
+[Pause](https://github.com/zerodowned/My-Stuff/tree/master/pause "")<br>
   This allows players to "Pause" making them frozen, hidden, and invulnerable. 
   It also puts them in Peace Mode and auto stables pets to prevent afk hunting.
   Cannot be used near Champion areas, or while involved in a PVP match.
   * System has an option to allow Staff to change the settings of certain to stop them from using it if they are abusing it via the [getxmlatt and target the player and select the Pause attachment and then change the propert "CanPause"
   - Intended to allow players to go afk randomly when Real Life calls. 
-
-*Shame Revamp - needs tweaking plus mobile abilities*<br> 
+  
+[Shame Revamp](https://github.com/zerodowned/My-Stuff/tree/master/ShameRevamp "")<br>
   Various mobiles and items to be used for the Shame Dungeon revamp. 
   Probably needs some tweaking.
   
-*Spellbar - needs edits to distro scripts*<br> 
+[Spellbar](https://github.com/zerodowned/My-Stuff/tree/master/Spellbar "")<br>
   A gump based hotbar to add spells and allows players to cast them via the hotbar with a single click.
   Player's must have the corresponding book with spell in their pack to cast them.
   - The hotbar can be locked to prevent movement/closing.

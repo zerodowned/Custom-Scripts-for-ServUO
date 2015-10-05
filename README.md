@@ -62,35 +62,38 @@ public virtual void AddBlood(Mobile attacker, Mobile defender, int damage)
   - Can be flipped horizontally or vertically
   - Additional edits are needed to fully work with Ninjitsu/Bushido spells ( will post later )
   
-*Carousel - incomplete but functional*<br> 
-  Exactly what it sounds like. Needs some editing to add tiles around it OnCreate. *ToDoList
+[Carousel](https://github.com/zerodowned/My-Stuff/blob/master/Carousel.cs "")<br>
+  Exactly what it sounds like. Needs some editing to add tiles around it OnCreate. ** ToDo List **
 
-*Elevator*<br> 
+[Elevator](https://github.com/zerodowned/My-Stuff/blob/master/Elevator.cs "")<br> 
   Platform that raises and lowers on a timer. Players and step on it and it will carry them up with it.
   
-*FreezeTile - incomplete*<br> 
+[Freeze Tile](https://github.com/zerodowned/My-Stuff/blob/master/FreezeTile.cs "")<br>
+  ** Incomplete - Needs editing to only work with certain mobiles **
   Intended to be used with XML Waypoints ( with edits ) to make mobiles pause at a certain spot before carrying on down the waypoint path.
   
-*Guardian Knight - needs works*<br> 
+[Guardian Knight](https://github.com/zerodowned/My-Stuff/blob/master/GuardianKnight.cs "")<br>
+** Needs more work **
   A Knight that certain parts of armor "fall Off" depending on how much damage has been taken.
   
-*Moving Trap*<br> 
+[Moving Trap](https://github.com/zerodowned/My-Stuff/blob/master/MovingTrap.cs "")<br>
   A block that moves back and forth and will damage you if you're in it's path ( like those spiked blocks from Zelda )
 
-*SBSellAll*<br> 
+[SBSellAll](https://github.com/zerodowned/My-Stuff/blob/master/SBSellAll.cs "")<br> 
   Intended to be used to allow Players to sell anything to any NPC Vendor
   Takes some of the tediousness out of selling loot.
   
-*Smart Item - probably needs a little work*<br> 
+[Smart Item](https://github.com/zerodowned/My-Stuff/blob/master/SmartItem.cs  "")<br>
+** Needs a liitle work but functional **
   Items with OnThink and OnCreate similar to Mobiles.
   Inherit from this to prevent needing to create timers all the time.
   
-*Speaking Sign - a little tweaking to come*<br>
+[Speaking Sign](https://github.com/zerodowned/My-Stuff/blob/master/SpeakingSign.cs "")<br>
   Sign that speaks it's name when a player is nearby. 
   - To add use [add Speakingsign "This is the signs name in quotes"
   - Future work intended to prevent the sign from showing up in player's joural as " SpeakingSign says SpeakingSign "
   
-*WayStone_DungeonVersion*<br>
+[WayStone DungeonVersion](https://github.com/zerodowned/My-Stuff/blob/master/WayStone_DungeonVersion.cs "")<br>
   A spinoff from Talow's WayStone. 
   This is a Stone ( as often used for Stone Vendors, etc ) that sits on the ground instead of being in their pack.
   When doubleclicked, if the player is in a party, it sends a summons request to each member of the party.

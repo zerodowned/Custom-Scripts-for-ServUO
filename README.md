@@ -6,6 +6,11 @@ Various scripts for use with RunUo/ServUo/PlayUo
   It's a stone that can be used to summon almost any Vendor from it. 
   Once the summoner walks away, the vendor self deletes.
   
+[Animation Locator](https://github.com/zerodowned/My-Stuff/tree/master/AnimationLocator "")<br>
+  Original script by Father Time / vermillion2083.
+  I added options for FreezeFrame viewing to help with my Mobile Statues code.
+  Also did a little work in the original gump to make it a little easier to see and use.
+  
 [Crystal Portals](https://github.com/zerodowned/My-Stuff/tree/master/CrystalPortals "")<br> 
   Already included in the repos for Serv and Justuo ( I believe ) with edits to improve functionality
   

@@ -15,33 +15,9 @@ namespace Server.Gumps
 		public enum Buttons { Name, Create, BodyValueIncrease, BodyValueSelection, BodyValueDecrease, HueEntry, Hue, AiUp, AiDown, FightModeUp, FightModeDown, RangePerception,
 			RangePerceptionEntry, RangeFightEntry, ActiveSpeedEntry, PassiveSpeedEntry, HitsEntry, StamEntry, ManaEntry, FameEntry,
 			FameEntry, KarmaEntry, DamageEntry, DmgPhyEntry, DmgFireEntry, DmgColdEntry, DmgPoisonEntry, DmgEnergyEntry,
-			ResPhyEntry, ResFireEntry, ResColdEntry, ResPoisonEntry, ResEnergyEntry,
+			ResPhyEntry, ResFireEntry, ResColdEntry, ResPoisonEntry, ResEnergyEntry, VirtualArmorEntry,
 			StrEnrtryMin, StrEnrtryMax, DexEnrtryMin, DexEnrtryMax, IntEnrtryMin, IntEnrtryMax, HitsEnrtryMin, HitsEnrtryMax, StamEnrtryMin, StamEnrtryMax, ManaEnrtryMin, ManEnrtryMax,
-			Button1,
-			Button2,
-			Button3,
-			TextEntry1,
-			Button4,
-			TextEntry2,
-			CopyofButton1,
-			CopyofCopyofButton1,
-			CopyofCopyofCopyofButton1,
-			CopyofCopyofCopyofCopyofButton1,
-			TextEntry3,
-			TextEntry4,
-			TextEntry5,
-			TextEntry6,
-			CopyofTextEntry6,
-			CopyofTextEntry5,
-			CopyofCopyofTextEntry5,
-			CopyofCopyofCopyofTextEntry5,
-			CopyofTextEntry4,
-			CopyofCopyofTextEntry4,
-			CopyofCopyofCopyofTextEntry4,
-			CopyofCopyofCopyofCopyofTextEntry4,
-			CopyofCopyofCopyofCopyofCopyofTextEntry4,
-			
-		
+			PageUP, PageDOWN,
 		}
 		
 		private Mobile m_From;
@@ -153,7 +129,7 @@ namespace Server.Gumps
 			PreFabGump.AddTextEntryPreFab( this, 2524, 340, 411, 23, 20, 0, (int)Buttons.ResEnergyEntry, @"", 4, null);
 			
 			AddLabel(22, 444, 0, @"Virtual Armor");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 118, 442, 50, 20, 0, (int)Buttons.TextEntry2, @"", 4, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 118, 442, 50, 20, 0, (int)Buttons.VirtualArmorEntry, @"", 4, null);
 		
 			AddButton(305, 466, 2252, 2252, (int)Buttons.Create, GumpButtonType.Reply, 0);
 			AddButton(340, 466, 2252, 2252, (int)Buttons.Create, GumpButtonType.Reply, 0);
@@ -162,8 +138,8 @@ namespace Server.Gumps
 			PreFabGump.AddHtmlOutlined( this, 309, 477, 70, 22, "<center><big>Refresh", "<BASEFONT COLOR= #FFFFFF><center><big>Refresh", false, false);
 			
 			AddLabel(62, 484, 0, @"Page");
-			AddButton(24, 484, 9910, 248, (int)Buttons.Button1, GumpButtonType.Reply, 0);
-			AddButton(114, 484, 9904, 248, (int)Buttons.CopyofButton1, GumpButtonType.Reply, 0);
+			AddButton(24, 484, 9910, 248, (int)Buttons.PageUP, GumpButtonType.Reply, 0);
+			AddButton(114, 484, 9904, 248, (int)Buttons.PageDOWN, GumpButtonType.Reply, 0);
 		}
 		
 		public void ResendGump()
@@ -175,9 +151,9 @@ namespace Server.Gumps
 		}
 		
 		public override void OnResponse( NetState sender, RelayInfo info )
-        {
-            Mobile from = sender.Mobile;
-            PlayerMobile player = (PlayerMobile)from;
+        	{
+        		Mobile from = sender.Mobile;
+            		PlayerMobile player = (PlayerMobile)from;
 			
 			if ( info.ButtonID == (int)Buttons.BodyValueIncrease ) {
 				_Box.ValueIndex++;

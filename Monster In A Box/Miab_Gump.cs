@@ -12,12 +12,13 @@ namespace Server.Gumps
 	{
 		public MonsterInABox_Item _Box;
 		
-		public enum Buttons { Name, Create, BodyValueIncrease, BodyValueSelection, BodyValueDecrease, HueEntry, Hue, AiUp, AiDown, FightModeUp, FightModeDown, RangePerception,
-			RangePerceptionEntry, RangeFightEntry, ActiveSpeedEntry, PassiveSpeedEntry, HitsEntry, StamEntry, ManaEntry, FameEntry,
-			FameEntry, KarmaEntry, DamageEntry, DmgPhyEntry, DmgFireEntry, DmgColdEntry, DmgPoisonEntry, DmgEnergyEntry,
-			ResPhyEntry, ResFireEntry, ResColdEntry, ResPoisonEntry, ResEnergyEntry, VirtualArmorEntry,
-			StrEnrtryMin, StrEnrtryMax, DexEnrtryMin, DexEnrtryMax, IntEnrtryMin, IntEnrtryMax, HitsEnrtryMin, HitsEnrtryMax, StamEnrtryMin, StamEnrtryMax, ManaEnrtryMin, ManEnrtryMax,
-			PageUP, PageDOWN,
+		public enum Buttons { Name, Create, BodyValueIncrease, BodyValueSelection, BodyValueDecrease,  Hue, AiUp, AiDown, FightModeUp, FightModeDown, PageUP, PageDOWN,
+		}
+		
+		public enum TextEntries { HueEntry, RangePerceptionEntry, RangeFightEntry, ActiveSpeedEntry, PassiveSpeedEntry, HitsEntry, StamEntry, ManaEntry, FameEntry,
+			FameEntry, KarmaEntry, DamageEntry, DmgPhyEntry, DmgFireEntry, DmgColdEntry, DmgPoisonEntry, DmgEnergyEntry, ResPhyEntry, ResFireEntry, 
+			ResColdEntry, ResPoisonEntry, ResEnergyEntry, VirtualArmorEntry, StrEnrtryMin, StrEnrtryMax, DexEnrtryMin, DexEnrtryMax, IntEnrtryMin, IntEnrtryMax, 
+			HitsEnrtryMin, HitsEnrtryMax, StamEnrtryMin, StamEnrtryMax, ManaEnrtryMin, ManaEnrtryMax,
 		}
 		
 		private Mobile m_From;
@@ -47,7 +48,7 @@ namespace Server.Gumps
 			
 			AddLabel(276, 120, 0, @"Hue");
 			// as of now, max hue # is 3000. so size limit is 4
-			PreFabGump.AddTextEntryPreFab( this, 2524, 308, 120, 34, 20, 0, (int)Buttons.HueEntry, @"", 4, null); 
+			PreFabGump.AddTextEntryPreFab( this, 2524, 308, 120, 34, 20, 0, (int)TextEntries.HueEntry, @"", 4, null); 
 			
 			AddButton(354, 120, 210, 210, (int)Buttons.Hue, GumpButtonType.Reply, 0);
 			AddItem(341, 118, 4009); // Dyes
@@ -71,65 +72,65 @@ namespace Server.Gumps
 
 		//RangePerception
 			AddLabel(20, 150, 0, @"RangePerception");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 134, 149, 35, 20, 0, (int)Buttons.RangePerceptionEntry, @"", 5, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 134, 149, 35, 20, 0, (int)TextEntries.RangePerceptionEntry, @"", 5, null);
 		//RangeFight
 			AddLabel(177, 150, 0, @"RangeFight");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 255, 149, 35, 20, 0, (int)Buttons.RangeFightEntry, @"", 5, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 255, 149, 35, 20, 0, (int)TextEntries.RangeFightEntry, @"", 5, null);
 		//MobileSpeed	
 			AddLabel(22, 180, 0, @"Active Speed");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 111, 179, 35, 20, 0, (int)Buttons.ActiveSpeedEntry, @"", 5, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 111, 179, 35, 20, 0, (int)TextEntries.ActiveSpeedEntry, @"", 5, null);
 			AddLabel(161, 180, 0, @"Passive Speed");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 258, 179, 35, 20, 0, (int)Buttons.PassiveSpeedEntry, @"", 5, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 258, 179, 35, 20, 0, (int)TextEntries.PassiveSpeedEntry, @"", 5, null);
 			
-			PreFabGump.AddTextEntryMinMax( this, "STR", 2524, 22, 57, 210, 0, (int)Buttons.StrEnrtryMin, (int)Buttons.StrEnrtryMax, _Box._Str.ToString(), 7, null);
+			PreFabGump.AddTextEntryMinMax( this, "STR", 2524, 22, 57, 210, 0, (int)TextEntries.StrEnrtryMin, (int)TextEntries.StrEnrtryMax, _Box._Str.ToString(), 7, null);
 			
-			PreFabGump.AddTextEntryMinMax( this, "DEX", 2524, 22, 57, 240, 0, (int)Buttons.DexEnrtryMin, (int)Buttons.DexEnrtryMax, _Box._Str.ToString(), 7, null);
+			PreFabGump.AddTextEntryMinMax( this, "DEX", 2524, 22, 57, 240, 0, (int)TextEntries.DexEnrtryMin, (int)TextEntries.DexEnrtryMax, _Box._Str.ToString(), 7, null);
 			
-			PreFabGump.AddTextEntryMinMax( this, "INT", 2524, 22, 57, 270, 0, (int)Buttons.IntEnrtryMin, (int)Buttons.IntEnrtryMax, _Box._Str.ToString(), 7, null);
+			PreFabGump.AddTextEntryMinMax( this, "INT", 2524, 22, 57, 270, 0, (int)TextEntries.IntEnrtryMin, (int)TextEntries.IntEnrtryMax, _Box._Str.ToString(), 7, null);
 			
 			AddLabel(200, 210, 0, @"Hits");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 245, 209, 52, 20, 0, (int)Buttons.HitsEntry, @"", 7, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 245, 209, 52, 20, 0, (int)TextEntries.HitsEntry, @"", 7, null);
 			
 			AddLabel(200, 240, 0, @"Stam");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 245, 239, 52, 20, 0, (int)Buttons.StamEntry, @"", 7, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 245, 239, 52, 20, 0, (int)TextEntries.StamEntry, @"", 7, null);
 			
 			AddLabel(200, 270, 0, @"Mana");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 245, 269, 52, 20, 0, (int)Buttons.ManaEntry, @"", 7, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 245, 269, 52, 20, 0, (int)TextEntries.ManaEntry, @"", 7, null);
 			
 			
 			AddLabel(22, 300, 0, @"Fame");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 61, 299, 53, 20, 0, (int)Buttons.FameEntry, @"", 6, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 61, 299, 53, 20, 0, (int)TextEntries.FameEntry, @"", 6, null);
 			AddLabel(135, 300, 0, @"Karma");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 182, 299, 49, 20, 0, (int)Buttons.KarmaEntry, @"", 6, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 182, 299, 49, 20, 0, (int)TextEntries.KarmaEntry, @"", 6, null);
 			AddLabel(251, 300, 0, @"Damage");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 306, 299, 51, 20, 0, (int)Buttons.DamageEntry, @"", 6, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 306, 299, 51, 20, 0, (int)TextEntries.DamageEntry, @"", 6, null);
 			
 			AddLabel(30, 330, 0, @"DAMAGE TYPE - Must equal a total of 100");
 			AddLabel(22, 356, 0, @"Phy");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 50, 355, 23, 20, 0, (int)Buttons.DmgPhyEntry, @"", 4, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 50, 355, 23, 20, 0, (int)TextEntries.DmgPhyEntry, @"", 4, null);
 			AddLabel(85, 356, 0, @"Fire");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 115, 355, 23, 20, 0, (int)Buttons.DmgFireEntry, @"", 4, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 115, 355, 23, 20, 0, (int)TextEntries.DmgFireEntry, @"", 4, null);
 			AddLabel(151, 356, 0, @"Cold");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 184, 355, 23, 20, 0, (int)Buttons.DmgColdEntry, @"", 4, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 184, 355, 23, 20, 0, (int)TextEntries.DmgColdEntry, @"", 4, null);
 			AddLabel(218, 356, 0, @"Poison");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 265, 355, 23, 20, 0, (int)Buttons.DmgPoisonEntry, @"", 4, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 265, 355, 23, 20, 0, (int)TextEntries.DmgPoisonEntry, @"", 4, null);
 			AddLabel(299, 356, 0, @"Enrgy");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 340, 355, 23, 20, 0, (int)Buttons.DmgEnergyEntry, @"", 4, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 340, 355, 23, 20, 0, (int)TextEntries.DmgEnergyEntry, @"", 4, null);
 			
 			AddLabel(30, 386, 0, @"RESIST TYPE");
 			AddLabel(22, 412, 0, @"Phy");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 50, 411, 23, 20, 0, (int)Buttons.ResPhyEntry, @"", 4, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 50, 411, 23, 20, 0, (int)TextEntries.ResPhyEntry, @"", 4, null);
 			AddLabel(85, 412, 0, @"Fire");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 115, 411, 23, 20, 0, (int)Buttons.ResFireEntry, @"", 4, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 115, 411, 23, 20, 0, (int)TextEntries.ResFireEntry, @"", 4, null);
 			AddLabel(151, 412, 0, @"Cold");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 184, 411, 23, 20, 0, (int)Buttons.ResColdEntry, @"", 4, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 184, 411, 23, 20, 0, (int)TextEntries.ResColdEntry, @"", 4, null);
 			AddLabel(218, 412, 0, @"Poison");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 265, 411, 23, 20, 0, (int)Buttons.ResPoisonEntry, @"", 4, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 265, 411, 23, 20, 0, (int)TextEntries.ResPoisonEntry, @"", 4, null);
 			AddLabel(299, 412, 0, @"Enrgy");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 340, 411, 23, 20, 0, (int)Buttons.ResEnergyEntry, @"", 4, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 340, 411, 23, 20, 0, (int)TextEntries.ResEnergyEntry, @"", 4, null);
 			
 			AddLabel(22, 444, 0, @"Virtual Armor");
-			PreFabGump.AddTextEntryPreFab( this, 2524, 118, 442, 50, 20, 0, (int)Buttons.VirtualArmorEntry, @"", 4, null);
+			PreFabGump.AddTextEntryPreFab( this, 2524, 118, 442, 50, 20, 0, (int)TextEntries.VirtualArmorEntry, @"", 4, null);
 		
 			AddButton(305, 466, 2252, 2252, (int)Buttons.Create, GumpButtonType.Reply, 0);
 			AddButton(340, 466, 2252, 2252, (int)Buttons.Create, GumpButtonType.Reply, 0);

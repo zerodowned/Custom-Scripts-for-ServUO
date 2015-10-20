@@ -167,7 +167,11 @@ namespace Server.Gumps
 			if ( info.ButtonID == (int)Buttons.Create ) {
 				TextRelay nameRelay = info.GetTextEntry( (int)Buttons.Name );
 				string name = nameRelay.Text.Trim();
-				CreateMobile( player, name );
+				
+				if( ResPhyEntry + ResFireEntry + ResColdEntry + ResPoisonEntry + ResEnergyEntry != 100) {
+					from.SendMessage("Resistance amounts must total 100!");
+				}
+				//CreateMobile( player, name );
 			}
 			
 		}

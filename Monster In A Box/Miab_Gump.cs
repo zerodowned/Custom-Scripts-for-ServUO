@@ -167,13 +167,46 @@ namespace Server.Gumps
 			if ( info.ButtonID == (int)Buttons.Create ) {
 				TextRelay nameRelay = info.GetTextEntry( (int)Buttons.Name );
 				string name = nameRelay.Text.Trim();
+			/*	
 				
-				if( ResPhyEntry + ResFireEntry + ResColdEntry + ResPoisonEntry + ResEnergyEntry != 100) {
-					from.SendMessage("Resistance amounts must total 100!");
-				}
-				//CreateMobile( player, name );
-			}
+				CreateMobile( player, name );
+			*/
 			
+			TextRelay ResPhyEntry = info.GetTextEntry( (int)TextEntries.ResPhyEntry );
+	                   	if ( ResPhyEntry != null ) {
+		                        int amount = 0;
+		                        try { amount = Convert.ToInt32(ResPhyEntry.Text,10); }
+		                        catch { player.SendMessage(1161, "Please make sure you write only numbers."); }
+	 			}
+			TextRelay ResFireEntry = info.GetTextEntry( (int)TextEntries.ResFireEntry );
+				if ( ResFireEntry != null ) {
+		                        int amount = 0;
+		                        try { amount = Convert.ToInt32(ResFireEntry.Text,10); }
+		                        catch { player.SendMessage(1161, "Please make sure you write only numbers."); }
+	 			}
+	 		TextRelay ResColdEntry = info.GetTextEntry( (int)TextEntries.ResColdEntry );
+				if ( ResColdEntry != null ) {
+		                        int amount = 0;
+		                        try { amount = Convert.ToInt32(ResColdEntry.Text,10); }
+		                        catch { player.SendMessage(1161, "Please make sure you write only numbers."); }
+	 			}
+	 		TextRelay ResPoisonEntry = info.GetTextEntry( (int)TextEntries.ResPoisonEntry );
+				if ( ResPoisonEntry != null ) {
+		                        int amount = 0;
+		                        try { amount = Convert.ToInt32(ResPoisonEntry.Text,10); }
+		                        catch { player.SendMessage(1161, "Please make sure you write only numbers."); }
+	 			}
+	 		TextRelay ResEnergyEntry = info.GetTextEntry( (int)TextEntries.ResEnergyEntry );
+				if ( ResEnergyEntry != null ) {
+		                        int amount = 0;
+		                        try { amount = Convert.ToInt32(ResEnergyEntry.Text,10); }
+		                        catch { player.SendMessage(1161, "Please make sure you write only numbers."); }
+	 			}
+	 		// Check if all Resistance entries add up to 100, no more and no less
+	 		if( ResPhyEntry + ResFireEntry + ResColdEntry + ResPoisonEntry + ResEnergyEntry != 100) {
+					from.SendMessage("Resistance amounts must total 100!");
+					ResendGump();
+			}
 		}
 		
 		

@@ -151,6 +151,12 @@ namespace Server.Gumps
 			m_From.SendGump( new Miab_Gump( m_From, _Box ) );
 		}
 		
+		public void TryCatch ( Mobile from, var TextRelay, int Variable )
+		{
+			try { Variable = Convert.ToInt32(TextRelay.Text,10); }
+		        catch { from.SendMessage(1161, "Please make sure you write only numbers."); }
+		}
+		
 		public override void OnResponse( NetState sender, RelayInfo info )
         	{
         		Mobile from = sender.Mobile;
@@ -172,40 +178,30 @@ namespace Server.Gumps
 				CreateMobile( player, name );
 			*/
 			
+			
+			TextRelay HueEntry = info.GetTextEntry( (int)TextEntries.HueEntry );
+	                   	if ( HueEntry != null ) 
+		                       TryCatch( player, HueEntry, Hue );
+			
 			TextRelay ResPhyEntry = info.GetTextEntry( (int)TextEntries.ResPhyEntry );
-	                   	if ( ResPhyEntry != null ) {
-		                        int amount = 0;
-		                        try { amount = Convert.ToInt32(ResPhyEntry.Text,10); }
-		                        catch { player.SendMessage(1161, "Please make sure you write only numbers."); }
-	 			}
-			TextRelay ResFireEntry = info.GetTextEntry( (int)TextEntries.ResFireEntry );
-				if ( ResFireEntry != null ) {
-		                        int amount = 0;
-		                        try { amount = Convert.ToInt32(ResFireEntry.Text,10); }
-		                        catch { player.SendMessage(1161, "Please make sure you write only numbers."); }
-	 			}
-	 		TextRelay ResColdEntry = info.GetTextEntry( (int)TextEntries.ResColdEntry );
-				if ( ResColdEntry != null ) {
-		                        int amount = 0;
-		                        try { amount = Convert.ToInt32(ResColdEntry.Text,10); }
-		                        catch { player.SendMessage(1161, "Please make sure you write only numbers."); }
-	 			}
-	 		TextRelay ResPoisonEntry = info.GetTextEntry( (int)TextEntries.ResPoisonEntry );
-				if ( ResPoisonEntry != null ) {
-		                        int amount = 0;
-		                        try { amount = Convert.ToInt32(ResPoisonEntry.Text,10); }
-		                        catch { player.SendMessage(1161, "Please make sure you write only numbers."); }
-	 			}
-	 		TextRelay ResEnergyEntry = info.GetTextEntry( (int)TextEntries.ResEnergyEntry );
+	                   	if ( ResPhyEntry != null ) 
+		                       TryCatch( player, ResPhyEntry, ResPhy );
+		        TextRelay ResFireEntry = info.GetTextEntry( (int)TextEntries.ResFireEntry );
+				if ( ResFireEntry != null ) 
+		                        TryCatch( player, ResFireEntry, ResFire );
+		        TextRelay ResColdEntry = info.GetTextEntry( (int)TextEntries.ResColdEntry );
+				if ( ResColdEntry != null ) 
+		                       TryCatch( player, ResColdEntry, ResCold );
+		        TextRelay ResPoisonEntry = info.GetTextEntry( (int)TextEntries.ResPoisonEntry );
+				if ( ResPoisonEntry != null )
+		                        TryCatch( player, ResPoisonEntry, ResPoison );
+		        TextRelay ResEnergyEntry = info.GetTextEntry( (int)TextEntries.ResEnergyEntry );
 				if ( ResEnergyEntry != null ) {
-		                        int amount = 0;
-		                        try { amount = Convert.ToInt32(ResEnergyEntry.Text,10); }
-		                        catch { player.SendMessage(1161, "Please make sure you write only numbers."); }
-	 			}
-	 		// Check if all Resistance entries add up to 100, no more and no less
+		                        TryCatch( player, ResEnergyEntry, ResEnergy );
+		        // Check if all Resistance entries add up to 100, no more and no less
 	 		if( ResPhyEntry + ResFireEntry + ResColdEntry + ResPoisonEntry + ResEnergyEntry != 100) {
-					from.SendMessage("Resistance amounts must total 100!");
-					ResendGump();
+				from.SendMessage("Resistance amounts must total 100!");
+				ResendGump();
 			}
 		}
 		

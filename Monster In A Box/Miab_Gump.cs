@@ -151,10 +151,12 @@ namespace Server.Gumps
 			m_From.SendGump( new Miab_Gump( m_From, _Box ) );
 		}
 		
-		public void TryCatch ( Mobile from, var TextRelay, int Variable )
+		// the usual try and catch for int based textentries to verify entry includes numbers only
+		// setup as method to prevent repeat code
+		public void TryCatch ( Mobile from, TextRelay entry, int TextEntry, int Variable, string WarningType )
 		{
-			try { Variable = Convert.ToInt32(TextRelay.Text,10); }
-		        catch { from.SendMessage(1161, "Please make sure you write only numbers."); }
+			try { Variable = Convert.ToInt32(entry.Text); }
+		    	catch { from.SendMessage(1161, String.Format("Please make sure you write only numbers for the entry {0}.", WarningType)); }
 		}
 		
 		public override void OnResponse( NetState sender, RelayInfo info )
@@ -173,36 +175,36 @@ namespace Server.Gumps
 			if ( info.ButtonID == (int)Buttons.Create ) {
 				TextRelay nameRelay = info.GetTextEntry( (int)Buttons.Name );
 				string name = nameRelay.Text.Trim();
-			/*	
+			
+				TextRelay HueEntry = info.GetTextEntry( (int)TextEntries.HueEntry );
+					if ( HueEntry != null ) 
+					TryCatch( player, HueEntry, (int)TextEntries.HueEntry, _Box.Hue, "Hue" );
+			
+				TextRelay ResPhyEntry = info.GetTextEntry( (int)TextEntries.ResPhyEntry );
+					if ( ResPhyEntry != null )
+					TryCatch( player, ResPhyEntry, (int)TextEntries.ResPhyEntry, ResPhy, "Resist Physical" );
+					
+				TextRelay ResFireEntry = info.GetTextEntry( (int)TextEntries.ResFireEntry );
+					if ( ResFireEntry != null )
+					TryCatch( player, ResFireEntry, (int)TextEntries.ResFireEntry, ResFire, "Resist Fire" );
 				
-				CreateMobile( player, name );
-			*/
-			
-			
-			TextRelay HueEntry = info.GetTextEntry( (int)TextEntries.HueEntry );
-	                   	if ( HueEntry != null ) 
-		                       TryCatch( player, HueEntry, Hue );
-			
-			TextRelay ResPhyEntry = info.GetTextEntry( (int)TextEntries.ResPhyEntry );
-	                   	if ( ResPhyEntry != null ) 
-		                       TryCatch( player, ResPhyEntry, ResPhy );
-		        TextRelay ResFireEntry = info.GetTextEntry( (int)TextEntries.ResFireEntry );
-				if ( ResFireEntry != null ) 
-		                        TryCatch( player, ResFireEntry, ResFire );
-		        TextRelay ResColdEntry = info.GetTextEntry( (int)TextEntries.ResColdEntry );
-				if ( ResColdEntry != null ) 
-		                       TryCatch( player, ResColdEntry, ResCold );
-		        TextRelay ResPoisonEntry = info.GetTextEntry( (int)TextEntries.ResPoisonEntry );
-				if ( ResPoisonEntry != null )
-		                        TryCatch( player, ResPoisonEntry, ResPoison );
-		        TextRelay ResEnergyEntry = info.GetTextEntry( (int)TextEntries.ResEnergyEntry );
-				if ( ResEnergyEntry != null ) {
-		                        TryCatch( player, ResEnergyEntry, ResEnergy );
-		        // Check if all Resistance entries add up to 100, no more and no less
-	 		if( ResPhyEntry + ResFireEntry + ResColdEntry + ResPoisonEntry + ResEnergyEntry != 100) {
-				from.SendMessage("Resistance amounts must total 100!");
-				ResendGump();
-			}
+				TextRelay ResColdEntry = info.GetTextEntry( (int)TextEntries.ResColdEntry );
+					if ( ResColdEntry != null )
+					TryCatch( player, ResColdEntry, (int)TextEntries.ResColdEntry, ResCold, "Resist Cold" );
+				
+				TextRelay ResPoisonEntry = info.GetTextEntry( (int)TextEntries.ResPoisonEntry );
+					if ( ResPoisonEntry != null )
+					TryCatch( player, ResPoisonEntry, (int)TextEntries.ResPoisonEntry, ResPoison, "Resist Poison" );
+					
+				TextRelay ResEnergyEntry = info.GetTextEntry( (int)TextEntries.ResEnergyEntry );
+					if ( ResEnergyEntry != null )
+					TryCatch( player, ResEnergyEntry, (int)TextEntries.ResEnergyEntry, ResEnergy, "Resist Energy" );
+					
+			        // Check if all Resistance entries add up to 100, no more and no less
+		 		if( ResPhyEntry + ResFireEntry + ResColdEntry + ResPoisonEntry + ResEnergyEntry != 100) {
+					from.SendMessage("Resistance amounts must total 100!");
+					ResendGump();
+				}
 		}
 		
 		

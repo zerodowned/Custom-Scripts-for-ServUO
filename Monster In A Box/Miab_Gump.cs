@@ -12,13 +12,20 @@ namespace Server.Gumps
 	{
 		public MonsterInABox_Item _Box;
 		
-		public enum Buttons { Name, Create, BodyValueIncrease, BodyValueSelection, BodyValueDecrease,  Hue, AiUp, AiDown, FightModeUp, FightModeDown, PageUP, PageDOWN,
+		public enum Buttons {
+			Name, Create, BodyValueIncrease, BodyValueSelection, BodyValueDecrease,
+			Hue, AiUp, AiDown, FightModeUp, FightModeDown,
+			PageUP, PageDOWN,
 		}
 		
-		public enum TextEntries { HueEntry, RangePerceptionEntry, RangeFightEntry, ActiveSpeedEntry, PassiveSpeedEntry, HitsEntry, StamEntry, ManaEntry, FameEntry,
-			FameEntry, KarmaEntry, DamageEntry, DmgPhyEntry, DmgFireEntry, DmgColdEntry, DmgPoisonEntry, DmgEnergyEntry, ResPhyEntry, ResFireEntry, 
-			ResColdEntry, ResPoisonEntry, ResEnergyEntry, VirtualArmorEntry, StrEnrtryMin, StrEnrtryMax, DexEnrtryMin, DexEnrtryMax, IntEnrtryMin, IntEnrtryMax, 
-			HitsEnrtryMin, HitsEnrtryMax, StamEnrtryMin, StamEnrtryMax, ManaEnrtryMin, ManaEnrtryMax,
+		public enum TextEntries { 
+			HueEntry, RangePerceptionEntry, RangeFightEntry, ActiveSpeedEntry, PassiveSpeedEntry,
+			HitsEntry, StamEntry, ManaEntry, FameEntry, KarmaEntry,
+			DamageEntry, DmgPhyEntry, DmgFireEntry, DmgColdEntry, DmgPoisonEntry,
+			DmgEnergyEntry, ResPhyEntry, ResFireEntry, ResColdEntry, ResPoisonEntry,
+			ResEnergyEntry, VirtualArmorEntry, StrEnrtryMin, StrEnrtryMax, DexEnrtryMin,
+			DexEnrtryMax, IntEnrtryMin, IntEnrtryMax, HitsEnrtryMin, HitsEnrtryMax,
+			StamEnrtryMin, StamEnrtryMax, ManaEnrtryMin, ManaEnrtryMax,
 		}
 		
 		private Mobile m_From;
@@ -53,30 +60,30 @@ namespace Server.Gumps
 			AddButton(354, 120, 210, 210, (int)Buttons.Hue, GumpButtonType.Reply, 0);
 			AddItem(341, 118, 4009); // Dyes
 			
-			//Name
+//Name
 			AddLabel(22, 50, 0, @"Name");
 			PreFabGump.AddTextEntryPreFab( this, 2524, 62, 50, 125, 20, 0, (int)Buttons.Name, @"", 50, null);
 			
-		//Ai Type
+//AI Type
 			AddLabel(22, 75, 0, @"AI Type");
 			AddButton(71, 78, 9766, 248, (int)Buttons.AiUp, GumpButtonType.Reply, 0);
 			AddButton(91, 78, 9762, 248, (int)Buttons.AiDown, GumpButtonType.Reply, 0);
 			AddLabel(116, 75, 0, @"mAiType");
 			
-		//Fight Mode
+//Fight Mode
 			AddLabel(22, 104, 0, @"Fight Mode");
 			AddButton(92, 107, 9766, 248, (int)Buttons.FightModeUp, GumpButtonType.Reply, 0);
 			AddButton(112, 107, 9762, 248, (int)Buttons.FightModeDown, GumpButtonType.Reply, 0);
 			AddLabel(133, 104, 0, @"mFightMode");
 			
 
-		//RangePerception
+//RangePerception
 			AddLabel(20, 150, 0, @"RangePerception");
 			PreFabGump.AddTextEntryPreFab( this, 2524, 134, 149, 35, 20, 0, (int)TextEntries.RangePerceptionEntry, @"", 5, null);
-		//RangeFight
+//RangeFight
 			AddLabel(177, 150, 0, @"RangeFight");
 			PreFabGump.AddTextEntryPreFab( this, 2524, 255, 149, 35, 20, 0, (int)TextEntries.RangeFightEntry, @"", 5, null);
-		//MobileSpeed	
+//MobileSpeed	
 			AddLabel(22, 180, 0, @"Active Speed");
 			PreFabGump.AddTextEntryPreFab( this, 2524, 111, 179, 35, 20, 0, (int)TextEntries.ActiveSpeedEntry, @"", 5, null);
 			AddLabel(161, 180, 0, @"Passive Speed");
@@ -104,7 +111,7 @@ namespace Server.Gumps
 			PreFabGump.AddTextEntryPreFab( this, 2524, 182, 299, 49, 20, 0, (int)TextEntries.KarmaEntry, @"", 6, null);
 			AddLabel(251, 300, 0, @"Damage");
 			PreFabGump.AddTextEntryPreFab( this, 2524, 306, 299, 51, 20, 0, (int)TextEntries.DamageEntry, @"", 6, null);
-			
+// Damage Type
 			AddLabel(30, 330, 0, @"DAMAGE TYPE - Must equal a total of 100");
 			AddLabel(22, 356, 0, @"Phy");
 			PreFabGump.AddTextEntryPreFab( this, 2524, 50, 355, 23, 20, 0, (int)TextEntries.DmgPhyEntry, @"", 4, null);
@@ -116,7 +123,7 @@ namespace Server.Gumps
 			PreFabGump.AddTextEntryPreFab( this, 2524, 265, 355, 23, 20, 0, (int)TextEntries.DmgPoisonEntry, @"", 4, null);
 			AddLabel(299, 356, 0, @"Enrgy");
 			PreFabGump.AddTextEntryPreFab( this, 2524, 340, 355, 23, 20, 0, (int)TextEntries.DmgEnergyEntry, @"", 4, null);
-			
+// Resist Type	
 			AddLabel(30, 386, 0, @"RESIST TYPE");
 			AddLabel(22, 412, 0, @"Phy");
 			PreFabGump.AddTextEntryPreFab( this, 2524, 50, 411, 23, 20, 0, (int)TextEntries.ResPhyEntry, @"", 4, null);
@@ -128,22 +135,22 @@ namespace Server.Gumps
 			PreFabGump.AddTextEntryPreFab( this, 2524, 265, 411, 23, 20, 0, (int)TextEntries.ResPoisonEntry, @"", 4, null);
 			AddLabel(299, 412, 0, @"Enrgy");
 			PreFabGump.AddTextEntryPreFab( this, 2524, 340, 411, 23, 20, 0, (int)TextEntries.ResEnergyEntry, @"", 4, null);
-			
+// Virtual Armor		
 			AddLabel(22, 444, 0, @"Virtual Armor");
 			PreFabGump.AddTextEntryPreFab( this, 2524, 118, 442, 50, 20, 0, (int)TextEntries.VirtualArmorEntry, @"", 4, null);
-		
+// Create Button		
 			AddButton(305, 466, 2252, 2252, (int)Buttons.Create, GumpButtonType.Reply, 0);
 			AddButton(340, 466, 2252, 2252, (int)Buttons.Create, GumpButtonType.Reply, 0);
 			AddBackground(302, 462, 84, 51, 9500);
-			//AddLabel(318, 478, 0, @"Refresh");
+	   //AddLabel(318, 478, 0, @"Refresh");
 			PreFabGump.AddHtmlOutlined( this, 309, 477, 70, 22, "<center><big>Refresh", "<BASEFONT COLOR= #FFFFFF><center><big>Refresh", false, false);
-			
+// Page UP/DOWN buttons		
 			AddLabel(62, 484, 0, @"Page");
 			AddButton(24, 484, 9910, 248, (int)Buttons.PageUP, GumpButtonType.Reply, 0);
 			AddButton(114, 484, 9904, 248, (int)Buttons.PageDOWN, GumpButtonType.Reply, 0);
 		}
 		
-		public void ResendGump()
+		public void ResendGump(Mobile from)
 		{
 			if (m_From.HasGump(typeof(Miab_Gump)) ) {
 				m_From.CloseGump( typeof( Miab_Gump ) ); 
@@ -151,61 +158,75 @@ namespace Server.Gumps
 			m_From.SendGump( new Miab_Gump( m_From, _Box ) );
 		}
 		
-		// the usual try and catch for int based textentries to verify entry includes numbers only
-		// setup as method to prevent repeat code
 		public void TryCatch ( Mobile from, TextRelay entry, int TextEntry, int Variable, string WarningType )
 		{
 			try { Variable = Convert.ToInt32(entry.Text); }
-		    	catch { from.SendMessage(1161, String.Format("Please make sure you write only numbers for the entry {0}.", WarningType)); }
+		    catch { from.SendMessage(1161, String.Format("Please make sure you write only numbers for the entry {0}.", WarningType)); }
 		}
 		
 		public override void OnResponse( NetState sender, RelayInfo info )
-        	{
-        		Mobile from = sender.Mobile;
-            		PlayerMobile player = (PlayerMobile)from;
+        {
+        	Mobile from = sender.Mobile;
+            PlayerMobile player = (PlayerMobile)from;
 			
 			if ( info.ButtonID == (int)Buttons.BodyValueIncrease ) {
 				_Box.ValueIndex++;
-				ResendGump();
+				ResendGump(player);
 			}
 			if ( info.ButtonID == (int)Buttons.AiUp ) {
 				 _Box._AI++;
-				 ResendGump();
+				 ResendGump(player);
 			}
-			if ( info.ButtonID == (int)Buttons.Create ) {
+			if ( info.ButtonID == (int)Buttons.Create ) 
+			{
 				TextRelay nameRelay = info.GetTextEntry( (int)Buttons.Name );
-				string name = nameRelay.Text.Trim();
-			
-				TextRelay HueEntry = info.GetTextEntry( (int)TextEntries.HueEntry );
-					if ( HueEntry != null ) 
-					TryCatch( player, HueEntry, (int)TextEntries.HueEntry, _Box.Hue, "Hue" );
-			
-				TextRelay ResPhyEntry = info.GetTextEntry( (int)TextEntries.ResPhyEntry );
-					if ( ResPhyEntry != null )
-					TryCatch( player, ResPhyEntry, (int)TextEntries.ResPhyEntry, ResPhy, "Resist Physical" );
-					
-				TextRelay ResFireEntry = info.GetTextEntry( (int)TextEntries.ResFireEntry );
-					if ( ResFireEntry != null )
-					TryCatch( player, ResFireEntry, (int)TextEntries.ResFireEntry, ResFire, "Resist Fire" );
+					if( nameRelay != null ){
+						string name = nameRelay.Text.Trim();
+					}
+					else { 
+						player.SendMessage("You must enter a name for the Mobile");
+						ResendGump(player);
+						return;
+					}
 				
-				TextRelay ResColdEntry = info.GetTextEntry( (int)TextEntries.ResColdEntry );
-					if ( ResColdEntry != null )
-					TryCatch( player, ResColdEntry, (int)TextEntries.ResColdEntry, ResCold, "Resist Cold" );
+				TextEntries[] values = (TextEntries[])Enum.GetValues(typeof(TextEntries));
+				string[] names = Enum.GetNames(typeof(TextEntries));
+				int i = 0;
+				int ResPhy=0, ResFire=0, ResCold=0, ResPoison=0, ResEnergy=0;
 				
-				TextRelay ResPoisonEntry = info.GetTextEntry( (int)TextEntries.ResPoisonEntry );
-					if ( ResPoisonEntry != null )
-					TryCatch( player, ResPoisonEntry, (int)TextEntries.ResPoisonEntry, ResPoison, "Resist Poison" );
+				foreach(TextEntries entry in values)
+				{
+					TextRelay Entry = info.GetTextEntry( (int)entry );
 					
-				TextRelay ResEnergyEntry = info.GetTextEntry( (int)TextEntries.ResEnergyEntry );
-					if ( ResEnergyEntry != null )
-					TryCatch( player, ResEnergyEntry, (int)TextEntries.ResEnergyEntry, ResEnergy, "Resist Energy" );
+					if ( Entry != null )
+						TryCatch( player, Entry, (int)entry, i, names[i] );
 					
-			        // Check if all Resistance entries add up to 100, no more and no less
-		 		if( ResPhyEntry + ResFireEntry + ResColdEntry + ResPoisonEntry + ResEnergyEntry != 100) {
-					from.SendMessage("Resistance amounts must total 100!");
-					ResendGump();
+					switch ( i ) {
+						case 11: ResPhy = i; break;
+						case 12: ResFire = i; break;
+						case 13: ResCold = i; break;
+						case 14: ResPoison = i; break;
+						case 15: ResEnergy = i; break;
+					}
+					
+					i++;
 				}
+
+				// Check if all Resistance entries add up to 100, no more and no less
+		
+				if( ResPhy + ResFire + ResCold + ResPoison + ResEnergy != 100) 
+				{
+						from.SendMessage("Resistance amounts must total 100!");
+						ResendGump(player);
+						return;
+				}
+				
+				
+			} // Create Button
+				//CreateMobile( player, name );
 		}
+			
+		
 		
 		
 		public void CreateMobile( Mobile from, string name )

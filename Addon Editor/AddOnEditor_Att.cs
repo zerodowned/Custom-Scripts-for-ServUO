@@ -38,13 +38,6 @@ namespace Server.Engines.XmlSpawner2
 			}
 		}
 		
-		public void CallCommand( Mobile from )
-		{
-			CommandEventArgs e;
-			AddonEdit_OnCommand(e);
-			
-		}
-		
 		public void Resend( Mobile from )
 		{
 			AddOnEditor_Att addoneditor = (AddOnEditor_Att)XmlAttach.FindAttachment(from, typeof(AddOnEditor_Att));

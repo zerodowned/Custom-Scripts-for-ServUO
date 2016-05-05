@@ -25,7 +25,7 @@ namespace Server.Items
 		public SpeakingSign( string message ) : base( 0x0BCF )
 		{
 			Movable = false;
-			Name = null;
+			Name = "a sign";
 			Message = message;
 		}
 		

@@ -19,19 +19,20 @@ namespace Server.Items
 	{
 		private DateTime LastUse;
 		public virtual TimeSpan Delay{ get{ return TimeSpan.FromMinutes( 2.0 ); } }
+		public string Message { get; set; }
 	
 	[Constructable]
-		public SpeakingSign( string desc ) : base( 0x0BCF )
+		public SpeakingSign( string message ) : base( 0x0BCF )
 		{
 			Movable = false;
-			Name = desc;
-			
+			Name = null;
+			Message = message;
 		}
 		
 		public virtual void HeedWarning()
 		{
 			//PublicOverheadMessage( type, hue, number, "" );
-			PublicOverheadMessage( MessageType.Regular, 0x3B2, false, String.Format( "{0}", Name) );
+			PublicOverheadMessage( MessageType.Regular, 0x3B2, false, String.Format( "{0}", Message) );
 		}
 
 		public override bool HandlesOnMovement { get { return true; } }

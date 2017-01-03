@@ -1,0 +1,34 @@
+//https://github.com/ggobbe/vivre-uo/tree/50c68c7a81d01b789bea7a12dfd3de07a0367531/Scripts/Customs/KniveChat
+
+//World.Broadcast(0x35, true, "The world will save in {0} minute{1}.", m, m != 1 ? "s" : "");
+
+/* 
+        [Usage("SMsg <text>")]
+        [Aliases("S", "SM")]
+        [Description("Broadcasts a message to all online staff.")]
+        public static void StaffMessage_OnCommand(CommandEventArgs e)
+        {
+            BroadcastMessage(AccessLevel.Counselor, e.Mobile.SpeechHue, String.Format("[{0}] {1}", e.Mobile.Name, e.ArgString));
+        }
+
+        [Usage("BCast <text>")]
+        [Aliases("B", "BC")]
+        [Description("Broadcasts a message to everyone online.")]
+        public static void BroadcastMessage_OnCommand(CommandEventArgs e)
+        {
+            BroadcastMessage(AccessLevel.Player, 0x482, String.Format("Staff message from {0}:", e.Mobile.Name));
+            BroadcastMessage(AccessLevel.Player, 0x482, e.ArgString);
+        }
+
+        public static void BroadcastMessage(AccessLevel ac, int hue, string message) 
+        { 
+            foreach (NetState state in NetState.Instances)
+            {
+                Mobile m = state.Mobile;
+
+                if (m != null && m.AccessLevel >= ac)
+                    m.SendMessage(hue, message);
+            }
+        }
+
+*/

@@ -32,3 +32,5 @@
         }
 
 */
+
+        PmRead( PlayerMobile from, string msg )

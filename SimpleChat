@@ -1,3 +1,19 @@
+//https://raw.githubusercontent.com/felladrin/runuo-custom-scripts/master/Unique%20Character%20Names/UniqueCharacterNames.cs
+static bool HasValidName(Mobile m)
+        {
+            if (m.AccessLevel != AccessLevel.Player)
+                return true;
+
+            if (m.RawName == null || m.RawName.Trim() == String.Empty || m.RawName == "Generic Player" || !NameVerification.Validate(m.RawName, 2, 16, true, false, true, 1, NameVerification.SpaceDashPeriodQuote))
+                return false;
+
+            foreach (Mobile otherPlayer in World.Mobiles.Values)
+                if (otherPlayer is PlayerMobile && otherPlayer != m && otherPlayer.RawName != null && m.RawName != null && otherPlayer.RawName.ToLower() == m.RawName.ToLower() && m.CreationTime > otherPlayer.CreationTime)
+                    return false;
+
+            return true;
+        }
+
 //https://github.com/ggobbe/vivre-uo/tree/50c68c7a81d01b789bea7a12dfd3de07a0367531/Scripts/Customs/KniveChat
 
 //World.Broadcast(0x35, true, "The world will save in {0} minute{1}.", m, m != 1 ? "s" : "");

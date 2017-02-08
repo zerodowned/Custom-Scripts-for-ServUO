@@ -1,0 +1,32 @@
+using Server;
+using System;
+
+namespace Server.Items
+{  
+  
+  public class CustomNinjaTabi : NinjaTabi
+	{
+		[Constructable]
+		public CustomNinjaTabi()
+		{
+			Hue = 1154;
+			Attributes.NightSight = 1;
+		}
+		
+		public CustomNinjaTabi(Serial serial) : base(serial)
+		{
+		}
+		
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write((int)0);
+		}
+		
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int v = reader.ReadInt();
+		}
+	}
+}

@@ -1,0 +1,37 @@
+using System;
+
+namespace Server.Items
+{
+    public class CustomBracelet : GoldBracelet
+    {
+        [Constructable]
+        public CustomBracelet()
+        {
+            this.LootType = LootType.Blessed;
+
+            this.Attributes.DefendChance = 5;
+            this.Resistances.Fire = 5;
+            this.Resistances.Cold = 5;
+            this.Resistances.Poison = 5;
+            this.Resistances.Energy = 5;
+        }
+
+        public CustomBracelet(Serial serial)
+            : base(serial)
+        {
+        }
+		public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+
+            writer.WriteEncodedInt(0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+
+            int version = reader.ReadEncodedInt();
+        }
+    }
+}

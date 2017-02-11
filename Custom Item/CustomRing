@@ -1,0 +1,38 @@
+using System;
+
+namespace Server.Items
+{
+    public class CustomRing : GoldRing
+    {
+        [Constructable]
+        public CustomRing()
+        {
+            this.Hue = 0x4F7;
+            this.Attributes.BonusDex = 8;
+            this.Attributes.RegenStam = 6;
+            this.Attributes.AttackChance = 15;
+            this.Resistances.Poison = 20;
+        }
+
+        public CustomRing(Serial serial)
+            : base(serial)
+        {
+        }
+
+        
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+
+            writer.Write((int)0);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+
+            int version = reader.ReadInt();
+
+        }
+    }
+}

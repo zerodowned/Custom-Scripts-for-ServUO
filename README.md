@@ -1,5 +1,5 @@
 # My-Stuff
-Various scripts for use with RunUo/ServUo/PlayUo
+Various scripts for use with RunUO and ServUO
 
 [AIO Vendor Stone](https://github.com/zerodowned/My-Stuff/tree/master/AIO%20Vendor%20Stone "")<br>
   Needs a little work. It's one of my older works. 

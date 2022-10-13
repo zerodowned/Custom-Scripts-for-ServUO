@@ -9,6 +9,18 @@ Various scripts for use with RunUO and ServUO
 [SOS Decoder](https://github.com/zerodowned/My-Stuff/tree/master/SOS%20Decoder "")<br>
   The SOS Decoder will teleport a player and their boat (plus any other players or pets on the boat) to the location of a SOS/Message-in-a-Bottle chest.
   
+[Treasure Map Decoder](https://github.com/zerodowned/My-Stuff/tree/master/Treasure%20Map%20Decoder "")<br>
+  Similar to the SOS Decoder, it will teleport a player to the location of the Treasure Map chest. This is wildly popular with players.
+  
+[Map Charter](https://github.com/zerodowned/My-Stuff/tree/master/Map%20Charter "")<br>
+  Altered version of the Map Charter, it will give a Treasure Map every (X) amount of time. The timer will stop once the Map Charter reaches it max cached     amount of Treasure Maps and will start again once a player redeems one from it's cache. 
+  
+[Stealable Signs](https://github.com/zerodowned/My-Stuff/tree/master/StealableSigns "")<br>
+  * Superclass BaseStealableSign.cs
+  A stealable sign is something that players can steal and then lock down in their house. Once locked down, they can double click it to set a custom message.
+  The sign also tracks who edited the message for tracking purposes in case an inappropriate message is added - then staff will know who. This property is 
+  only viewable to staff.
+  
 ------
 
 [AIO Vendor Stone](https://github.com/zerodowned/My-Stuff/tree/master/AIO%20Vendor%20Stone "")<br>

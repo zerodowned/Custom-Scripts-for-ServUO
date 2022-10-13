@@ -64,7 +64,7 @@ public virtual void AddBlood(Mobile attacker, Mobile defender, int damage)
   * Once animated, if there are no players within a certain range, it will go back to it's pedastal and "freeze" again.
   
 [Monster In A Box](https://github.com/zerodowned/My-Stuff/tree/master/Monster%20In%20A%20Box "")<br>
-  * * Currently under development * *
+  *Currently under development*
   This code, when completed, is intended to allow you to script custom mobiles in game ( within limitations )
   Allowing you to create custom Mobs for events without writing a full script and restarting.
   * Eventually intended to have a system to save and spawn mobiles via XML as well.
@@ -97,11 +97,11 @@ public virtual void AddBlood(Mobile attacker, Mobile defender, int damage)
   * Platform that raises and lowers on a timer. Players and step on it and it will carry them up with it.
   
 [Freeze Tile](https://github.com/zerodowned/My-Stuff/blob/master/FreezeTile.cs "")<br>
-  ** Incomplete - Needs editing to only work with certain mobiles **
+  *Incomplete - Needs editing to only work with certain mobiles*
   * Intended to be used with XML Waypoints ( with edits ) to make mobiles pause at a certain spot before carrying on down the waypoint path.
   
 [Guardian Knight](https://github.com/zerodowned/My-Stuff/blob/master/GuardianKnight.cs "")<br>
-** Needs more work **
+*Needs more work*
   * A Knight that certain parts of armor "fall Off" depending on how much damage has been taken.
   
 [Moving Trap](https://github.com/zerodowned/My-Stuff/blob/master/MovingTrap.cs "")<br>
@@ -112,17 +112,17 @@ public virtual void AddBlood(Mobile attacker, Mobile defender, int damage)
   * Takes some of the tediousness out of selling loot.
   
 [Smart Item](https://github.com/zerodowned/My-Stuff/blob/master/SmartItem.cs  "")<br>
-*Needs a liitle work but functional. Has not been tested in a live setting.
+*Needs a liitle work but functional. Has not been tested in a live setting.*
   * Items with OnThink and OnCreate similar to Mobiles.
   * Inherit from this to prevent needing to create timers all the time.
   
 [Speaking Sign](https://github.com/zerodowned/My-Stuff/blob/master/SpeakingSign.cs "")<br>
   * Sign that speaks it's name when a player is nearby. 
   * To add use [add Speakingsign "This is the signs name in quotes"
-  *Future work intended to prevent the sign from showing up in player's joural as " SpeakingSign says SpeakingSign "
+  *Future work intended to prevent the sign from showing up in player's joural as " SpeakingSign says SpeakingSign "*
   
 [WayStone DungeonVersion](https://github.com/zerodowned/My-Stuff/blob/master/WayStone_DungeonVersion.cs "")<br>
-  *A spinoff from Talow's WayStone. 
+  *A spinoff from Talow's WayStone.*
   * This is a Stone ( as often used for Stone Vendors, etc ) that sits on the ground instead of being in their pack.
   * When double-clicked, if the player is in a party, it sends a request via gump/UI to each member of the party.
   * If the member accepts, they are teleported to the Summoner's position.

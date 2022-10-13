@@ -334,6 +334,7 @@ namespace Server.Items
 			}
 
 			IDamageableItem2 Idam = new IDamageableItem2( this );
+			Idam.CantWalk = true;
 
 			if( Idam != null && !Idam.Deleted && this.Map != null )
 			{
@@ -591,7 +592,7 @@ namespace Server.Items
 
 			//Frozen = true;
 			//Paralyzed = true;
-			//CantWalk = true;
+			CantWalk = true;
 
 			DamageMin = 10;
 			DamageMax = 25;

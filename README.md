@@ -1,6 +1,16 @@
 # My-Stuff
 Various scripts for use with RunUO and ServUO
 
+[Rune Chisel](https://github.com/zerodowned/My-Stuff/tree/master/RuneChisel "")<br>
+  Rune Chisel is an item with charges that allows players to remove selected properties from an item. 
+  This would typically be done as a means to further enhance the item via the Imbuing skill.
+  *NOTE: This has never been tested in a live setting due poor reception during testing with select players.
+ 
+[SOS Decoder](https://github.com/zerodowned/My-Stuff/tree/master/SOS%20Decoder "")<br>
+  The SOS Decoder will teleport a player and their boat (plus any other players or pets on the boat) to the location of a SOS/Message-in-a-Bottle chest.
+  
+------
+
 [AIO Vendor Stone](https://github.com/zerodowned/My-Stuff/tree/master/AIO%20Vendor%20Stone "")<br>
   Needs a little work. It's one of my older works. 
   It's a stone that can be used to summon almost any Vendor from it. 

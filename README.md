@@ -16,7 +16,7 @@ Various scripts for use with RunUO and ServUO
   Altered version of the Map Charter, it will give a Treasure Map every (X) amount of time. The timer will stop once the Map Charter reaches it max cached     amount of Treasure Maps and will start again once a player redeems one from it's cache. 
   
 [Stealable Signs](https://github.com/zerodowned/My-Stuff/tree/master/StealableSigns "")<br>
-  * Superclass BaseStealableSign.cs
+  Superclass BaseStealableSign.cs
   A stealable sign is something that players can steal and then lock down in their house. Once locked down, they can double click it to set a custom message.
   The sign also tracks who edited the message for tracking purposes in case an inappropriate message is added - then staff will know who. This property is 
   only viewable to staff.

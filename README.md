@@ -45,7 +45,7 @@ Various scripts for use with RunUO and ServUO
   
   * You'll also notice that mobile bleeds, I have a commented out line to show how I handled it to prevent the mobile from bleeding.
 
-`//public override bool DoesNotBleed{ get{ return true;}} under IDamageableItem2 - the mobile
+```//public override bool DoesNotBleed{ get{ return true;}} under IDamageableItem2 - the mobile
 
 then in BaseWeapon find the AddBlood method and edit like below
 public virtual void AddBlood(Mobile attacker, Mobile defender, int damage)
@@ -54,7 +54,7 @@ public virtual void AddBlood(Mobile attacker, Mobile defender, int damage)
          if( ((BaseCreature)defender).DoesNotBleed ) {
            return;
          }
-       }`
+       }```
 
 [Mobile Statues](https://github.com/zerodowned/My-Stuff/tree/master/Mobile%20Statues "")<br>
   * An idea presented to me by Talow...
